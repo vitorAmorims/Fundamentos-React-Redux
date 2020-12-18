@@ -1,6 +1,9 @@
 import "./App.css";
 import Card from "../src/components/Card";
 import Intervalo from '../src/components/Intervalo'
+import Soma from '../src/components/Soma';
+import Media from '../src/components/Media';
+import Sorteio from '../src/components/Sorteio'
 
 function App() {
   function gera_cor() {
@@ -33,12 +36,12 @@ function App() {
     <div className="App">
       <h1>Exercício React-Redux (SIMPLES)</h1>
       <div className="linha">
-        <Card title="Card #01" color={gera_cor()}><Intervalo /></Card>
+        <Card title="Aleatório" color={gera_cor()}><Intervalo /></Card>
       </div>
       <div className="linha">
-        <Card title="Card #02" color={gera_cor()}>X</Card>
-        <Card title="Card #03" color={gera_cor()}>Y</Card>
-        <Card title="Card #04" color={gera_cor()}>X</Card>
+        <Card title="Soma dos números" color={gera_cor()}><Soma /></Card>
+        <Card title="Média dos números" color={gera_cor()}><Media /></Card>
+        <Card title="Sorteio de um número" color={gera_cor()}><Sorteio /></Card>
       </div>
     </div>
   );
