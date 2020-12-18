@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default props => {
+    const { min,max } = props;
     return (
         <div>
             <span>
                 <span>Resultado:</span>
-                <strong>10</strong>
+                <strong>{ max + min }</strong>
             </span>
         </div>
     )

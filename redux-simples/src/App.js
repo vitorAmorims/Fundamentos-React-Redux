@@ -1,9 +1,10 @@
+import React, { useState } from "react"; //estado dentro de componente fn
 import "./App.css";
 import Card from "../src/components/Card";
-import Intervalo from '../src/components/Intervalo'
-import Soma from '../src/components/Soma';
-import Media from '../src/components/Media';
-import Sorteio from '../src/components/Sorteio'
+import Intervalo from "../src/components/Intervalo";
+import Soma from "../src/components/Soma";
+import Media from "../src/components/Media";
+import Sorteio from "../src/components/Sorteio";
 
 function App() {
   function gera_cor() {
@@ -32,16 +33,31 @@ function App() {
     }
     return cor;
   }
+  const [min, setMin] = useState(10);
+  const [max, setMax] = useState(20);
   return (
     <div className="App">
       <h1>Exercício React-Redux (SIMPLES)</h1>
       <div className="linha">
-        <Card title="Aleatório" color={gera_cor()}><Intervalo /></Card>
+        <Card title="Aleatório" color={gera_cor()}>
+          <Intervalo
+            min={min}
+            max={max}
+            onMinChanged={setMin}
+            onMaxChanged={setMax}
+          />
+        </Card>
       </div>
       <div className="linha">
-        <Card title="Soma dos números" color={gera_cor()}><Soma /></Card>
-        <Card title="Média dos números" color={gera_cor()}><Media /></Card>
-        <Card title="Sorteio de um número" color={gera_cor()}><Sorteio /></Card>
+        <Card title="Soma dos números" color={gera_cor()}>
+          <Soma min={min} max={max} />
+        </Card>
+        <Card title="Média dos números" color={gera_cor()}>
+          <Media min={min} max={max} />
+        </Card>
+        <Card title="Sorteio de um número" color={gera_cor()}>
+          <Sorteio min={min} max={max} />
+        </Card>
       </div>
     </div>
   );

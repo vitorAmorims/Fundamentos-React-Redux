@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default props => {
+    const { min,max } = props;
     return (
         <div>
             <span>
                 <span>Resultado:</span>
-                <strong>5</strong>
+                <strong>{ (max + min) / 2 }</strong>
             </span>
         </div>
     )

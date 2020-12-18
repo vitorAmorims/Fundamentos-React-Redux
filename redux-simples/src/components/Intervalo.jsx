@@ -1,13 +1,22 @@
-import './Intervalo.css';
-import React from 'react'
+import "./Intervalo.css";
+import React from "react";
 
-export default props => {
-    return (
-        <div className="intervalo">
-            <span>Minimo:</span>
-            <input type="number" value={0} readOnly/>
-            <span>Máximo:</span>
-            <input type="number" value={10} readOnly/>
-        </div>
-    )
-}
+export default (props) => {
+  const { min, max, onMinChanged, onMaxChanged } = props;
+  return (
+    <div className="intervalo">
+      <span>Minimo:</span>
+      <input
+        type="number"
+        value={min}
+        onChange={(e) => onMinChanged(+e.target.value)}
+      />
+      <span>Máximo:</span>
+      <input
+        type="number"
+        value={max}
+        onChange={(e) => onMaxChanged(+e.target.value)}
+      />
+    </div>
+  );
+};
