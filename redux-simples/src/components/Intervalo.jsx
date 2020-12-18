@@ -1,10 +1,12 @@
 import "./Intervalo.css";
 import React from "react";
 import { connect } from "react-redux";
+import { alterarNumeroMinimo } from '../store/actions/numeros'
 
 const Intervalo = (props) => {
-  // console.log(props);
-  const { min, max } = props;
+  console.log(props);
+  const { min, max, alterarMin } = props;
+  // alterarMin(30) 
   return (
     <div className="intervalo">
       <span>Minimo:</span>
@@ -22,4 +24,14 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Intervalo);
+function mapDispatchToProps(dispatch) {
+  return {
+    alterarMin(novoNumero) {
+      //action creator -> action
+      const action = alterarNumeroMinimo(novoNumero)  ;
+      dispatch(action)    //esta action será passado para todos os reducers
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Intervalo);
