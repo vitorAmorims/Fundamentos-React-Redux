@@ -1,4 +1,4 @@
-import React, { useState } from "react"; //estado dentro de componente fn
+import React from "react"; //estado dentro de componente fn
 import "./App.css";
 import Card from "../src/components/Card";
 import Intervalo from "../src/components/Intervalo";
@@ -33,30 +33,24 @@ function App() {
     }
     return cor;
   }
-  const [min, setMin] = useState(10);
-  const [max, setMax] = useState(20);
+  
   return (
     <div className="App">
       <h1>Exercício React-Redux (SIMPLES)</h1>
       <div className="linha">
         <Card title="Aleatório" color={gera_cor()}>
-          <Intervalo
-            min={min}
-            max={max}
-            onMinChanged={setMin}
-            onMaxChanged={setMax}
-          />
+          <Intervalo />
         </Card>
       </div>
       <div className="linha">
         <Card title="Soma dos números" color={gera_cor()}>
-          <Soma min={min} max={max} />
+          <Soma />
         </Card>
         <Card title="Média dos números" color={gera_cor()}>
-          <Media min={min} max={max} />
+          <Media />
         </Card>
         <Card title="Sorteio de um número" color={gera_cor()}>
-          <Sorteio min={min} max={max} />
+          <Sorteio />
         </Card>
       </div>
     </div>
