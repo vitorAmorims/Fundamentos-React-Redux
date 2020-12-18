@@ -32,9 +32,9 @@ function App() {
       <h1>Exercício React-Redux (SIMPLES)</h1>
       <div className="linha">
         <Card title="Card #01" color={gera_cor()}>X</Card>
-        <Card title="Card #02" color={gera_cor()}>X</Card>
       </div>
       <div className="linha">
+        <Card title="Card #02" color={gera_cor()}>X</Card>
         <Card title="Card #03" color={gera_cor()}>Y</Card>
         <Card title="Card #04" color={gera_cor()}>X</Card>
       </div>
