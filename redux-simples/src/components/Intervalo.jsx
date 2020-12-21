@@ -7,7 +7,7 @@ import {
 } from "../store/actions/numeros";
 
 const Intervalo = (props) => {
-  console.log(props);
+  // console.log(props);
   const { min, max, alterarMin, alterarMax } = props;
   // alterarMin(30)
   return (

@@ -19,3 +19,7 @@
 .Card .Content {
     padding: 20px;
 }
+
+.Card button {
+    width: 100px;
+}

@@ -5,6 +5,7 @@ import Intervalo from "../src/components/Intervalo";
 import Soma from "../src/components/Soma";
 import Media from "../src/components/Media";
 import Sorteio from "../src/components/Sorteio";
+import UserContainer from "../src/components/ChamadaAPI";
 
 function App() {
   function gera_cor() {
@@ -33,7 +34,7 @@ function App() {
     }
     return cor;
   }
-  
+
   return (
     <div className="App">
       <h1>Exercício React-Redux (SIMPLES)</h1>
@@ -51,6 +52,11 @@ function App() {
         </Card>
         <Card title="Sorteio de um número" color={gera_cor()}>
           <Sorteio />
+        </Card>
+      </div>
+      <div>
+        <Card title="Redux Async" color={gera_cor()}>
+         <UserContainer />
         </Card>
       </div>
     </div>

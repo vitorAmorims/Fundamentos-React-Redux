@@ -5,8 +5,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import storeConfig from '../src/store/storeConfig';
+import { fetchUsers } from '../src/store/actions/asyncActions'
 
 const store = storeConfig();
+store.subscribe(() => {console.log(store.getState())})
+store.dispatch(fetchUsers())
 
 ReactDOM.render(
   <Provider store={store}>
